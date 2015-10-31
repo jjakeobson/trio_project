@@ -1,16 +1,11 @@
 Goal:
 - eCom Platform (Amazon, Etsy, Craigslist, etc.) 
-- 
+- Working shopping cart and checkout systems.
 
-Features:
-- User login via Devise, OAuth too difficult.
-- Shopping cart
-- Payment API via Stripe
-- Pull products from sites such as Etsy, Rakuten, Ebay, etc.
-- Products show reviews pulled from Youtube, photos from Instagram, etc.
-- Users can post own images upon review creation.
-
-Notes:
-- Opportunity to include API from other sites, Youtube reviews, Instagram photos.
-- Leverage external APIs for product import.
-
+Process:
+- Create scaffolding
+- Configure item API
+- Create container to accept items and connect API.
+- Create a basic GUI
+- Create review display inteface and import from API.
+- User is able to create new review and upload product image.
