@@ -1,0 +1,11 @@
+Goal:
+- eCom Platform (Amazon, Etsy, Craigslist, etc.) 
+- Working shopping cart and checkout systems.
+
+Process:
+- Create scaffolding
+- Configure item API
+- Create container to accept items and connect API.
+- Create a basic GUI
+- Create review display inteface and import from API.
+- User is able to create new review and upload product image.

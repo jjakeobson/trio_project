@@ -7,7 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+    
+<!-- START DEVISE CODE -->
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>    
+<!-- END DEVISE CODE -->
 
+    
 <%= yield %>
 
 </body>
