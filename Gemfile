@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
+gem 'pg'
+gem 'binding_of_caller'
+gem 'better_errors'
+
+group :production do
+  gem "rails_12factor"
+end
+
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -44,4 +52,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
