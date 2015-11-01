@@ -1,6 +1,6 @@
 <h1>Your Cart</h1>
 
-<% if @cart.empty? %>
+<% if @cart.nil? %>
   <p>
     Your cart is currently empty.
     <%= link_to "Go To Products", products_path %>
@@ -11,7 +11,6 @@
 <% end %>
 
 <% total = 0 %>
-<% raise %>
 <ul>
   <% @cart.each do |id, quantity| %>
     <% product = Product.find_by_id(id) %>

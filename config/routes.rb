@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  get '/cart' => 'cart#index'
+  get '/cart' => 'cart#index', as: :cart
   get 'cart/clear' => 'cart#clearCart'
-  get '/cart/:id' => 'cart#add'
+  post '/cart/:product_id' => 'cart#add_item', as: :add_item
 
   root to: 'products#index'
   devise_for :users
   resources :reviews
   resources :products
 
-  # #this is to authorize before allowing acess to home page. 
+  # #this is to authorize before allowing acess to home page.
   # authenticated :user do
   #   root to: 'products#index', as: :authenticated_root
   # end
