@@ -11,7 +11,7 @@
 <% end %>
 
 <% total = 0 %>
-
+<% raise %>
 <ul>
   <% @cart.each do |id, quantity| %>
     <% product = Product.find_by_id(id) %>
