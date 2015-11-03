@@ -1,32 +1,51 @@
 <!-- <p id="notice"><%= notice %></p> -->
+<div class="col-md-9">
+  <%= link_to 'Edit', edit_product_path(@product) %> |
+  <%= link_to 'Back', products_path %><br>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+                <div class="thumbnail">
+                    <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+                    <div class="caption-full">
+                        <h4 class="pull-right"><%= @product.formatted_price %></h4>
+                        <h4><a href="#"><%= @product.name %></a>
+                        </h4>
+                        <p><%= @product.description %></p>
+                    </div>
+                    <div class="ratings">
+                        <p class="pull-right"><%= @product.reviews.length %> Review(s)</p>
+                        <p><%= link_to "Add To Cart", add_item_path(@product), method: :post %></p>
+                    </div>
+                </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+                <div class="well">
 
-<p>
-  <strong>Price</strong>
-  <%= @product.formatted_price %>
-</p>
+                    <div class="text-right">
+                        <%= render 'reviews/form' %>
+                    </div>
 
-<h3>Reviews</h3>
+                    <hr>
+                    <% @product.reviews.each do |review| %>
 
-<% @product.reviews.each do |review| %>
-  <p>
-    <%= review.comment %>
-    <br>
-    Added on: <%= review.created_at %>
-  </p>
-<% end %>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            Anonymous
+                            <span class="pull-right">Added on: <%= review.created_at %></span>
+                            <p><%= review.comment %></p>
+                        </div>
+                    </div>
 
-<h3>New Review</h3>
-<%= render 'reviews/form' %>
+                    <hr>
+                    <% end %>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+
+
+
+
+                </div>
+
+            </div>
