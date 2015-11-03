@@ -12,7 +12,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+ 
 <!-- START DEVISE CODE -->
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
@@ -38,12 +38,13 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li>
+<!--                <li>
                     <a href="#">About</a>
                 </li>
                 <li>
                     <a href="#">Services</a>
                 </li>
+-->
                 <li>
                     <%= link_to 'My Account', edit_user_registration_path %>
                 </li>
