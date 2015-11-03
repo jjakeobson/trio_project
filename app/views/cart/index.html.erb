@@ -8,6 +8,7 @@
 <% else %>
   <%= link_to "Empty Your Cart", cart_clear_path %>
   <%= link_to "Go To Products", products_path %>
+  <%= link_to "Pay Now", charges_path %>
 <% end %>
 
 <% total = 0 %>
@@ -28,7 +29,8 @@
       <% total += cart_item.quantity * cart_item.product.price_in_cents %>
   <% end %>
 <p>
-  <b>  Total: <%= number_to_currency(total / 100, :unit => '$') %></b>
+  <% @total = number_to_currency(total / 100, :unit => '$') %>
+  <b>  Total: <%= @total %></b>
 </p>
 
 </ul>
