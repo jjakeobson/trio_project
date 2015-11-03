@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/cart/:product_id' => 'cart#add_item', as: :add_item
   get '/charges' => 'charges#new'
   post '/charges' => 'charges#paid'
+  get 'users/products' => 'products#index'
 
   root to: 'products#index'
   devise_for :users

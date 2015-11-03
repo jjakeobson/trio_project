@@ -5,19 +5,13 @@
     Your cart is currently empty.
     <%= link_to "Go To Products", products_path %>
   </p>
-<% else %>
-  <%= link_to "Empty Your Cart", cart_clear_path %>
-  <%= link_to "Go To Products", products_path %>
-  <%= link_to "Pay Now", charges_path %>
 <% end %>
 
 <ul>
   <% @cart.unique_cart_items.each do |cart_item| %>
       <li>
         <b>Product:</b> <%= link_to cart_item.product.name, cart_item.product %>
-        <p>
-        <b>Description:</b>  <%= cart_item.product.description %>
-        </p>
+
         <p>
           <b>Price:</b> <%= number_to_currency(cart_item.product.price_in_cents / 100 , :unit => '$') %>
         </p>
@@ -30,3 +24,4 @@
     <b>  Total: <%= number_to_currency(@cart.total, unit: '$') %></b>
   </p>
 </ul>
+<strong><%= link_to "Pay Now", charges_path %></strong>
