@@ -1,10 +1,11 @@
 class ChargesController < ApplicationController
+  before_action :set_cart
+
   def new
   end
 
   def create
     # Amount in cents
-    @amount = 2100
 
     customer = Stripe::Customer.create(
       email: 'example@stripe.com',
@@ -13,7 +14,7 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       customer: customer.id,
-      amount: @amount,
+      amount: @cart.total,
       description: 'Rails Stripe customer',
       currency: 'usd'
     )
@@ -24,6 +25,16 @@ class ChargesController < ApplicationController
   end
 
   def paid
-    render plain: params.inspect
   end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_cart
+    @cart = Cart.find_by(id: current_user.id)
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  # def cart_params
+  #   params.require(:cart)
+  # end
 end
