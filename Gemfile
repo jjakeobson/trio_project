@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'pg'
 gem 'binding_of_caller'
 gem 'better_errors'
+gem 'stripe'
 
 group :production do
   gem "rails_12factor"
