@@ -7,4 +7,8 @@ class Cart < ActiveRecord::Base
     update_attribute(:is_active, false)
     Cart.create(user: user)
   end
+
+  def unique_cart_items
+    cart_items.select("distinct on (product_id) *")
+  end
 end
