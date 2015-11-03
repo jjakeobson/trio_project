@@ -1,1 +1,8 @@
-<h2>Thanks, you paid <strong><%= @total %></strong>!</h2>
+<h2>Thanks, you paid <strong><%= number_to_currency(@cart.total, unit: '$') %></strong> for:</h2>
+<ul>
+  <% @cart.unique_cart_items.each do |cart_item| %>
+      <li>
+        <%= cart_item.quantity %> x <%= link_to cart_item.product.name, cart_item.product %>
+      </li>
+  <% end %>
+<%# raise %>
