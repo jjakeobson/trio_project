@@ -11,7 +11,6 @@
   <%= link_to "Pay Now", charges_path %>
 <% end %>
 
-<% total = 0 %>
 <ul>
   <% @cart.unique_cart_items.each do |cart_item| %>
       <li>
@@ -26,11 +25,8 @@
           <b>Quantity:</b> <%= cart_item.quantity %>
         </p>
       </li>
-      <% total += cart_item.quantity * cart_item.product.price_in_cents %>
   <% end %>
-<p>
-  <% @total = number_to_currency(total / 100, :unit => '$') %>
-  <b>  Total: <%= @total %></b>
-</p>
-
+  <p>
+    <b>  Total: <%= number_to_currency(@cart.total, unit: '$') %></b>
+  </p>
 </ul>
