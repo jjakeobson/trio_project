@@ -61,12 +61,10 @@
 
                 <div class="row">
                   <% @products.each do |product| %>
-
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+                  <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <!--<img src="http://placehold.it/320x150" alt="">-->
-                            <img src="http://vignette2.wikia.nocookie.net/ofibty/images/6/69/Animals-fighting-2.jpg/revision/latest?cb=20130515190636">
+
+                            <%= image_tag product.image_url %>
                             <div class="caption">
                                 <h4 class="pull-right">$<%= product.formatted_price %></h4>
                                 <h4><%= link_to "#{product.name}", product %>
