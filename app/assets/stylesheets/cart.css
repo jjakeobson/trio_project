@@ -1,4 +1,25 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+li.cart_item {
+  padding: 10px 0 ;
+}
+
+.cart1 {
+  /*text-align: center;*/
+  min-width: 100%;
+}
+
+.cart1 ul {
+  list-style: none;
+}
+
+.btn-success {
+  float: right;
+  position: relative;
+  right: 50px;
+}
+
+#total {
+  float: right;
+  position: relative;
+  right: 260px;
+  top: 10px
+}

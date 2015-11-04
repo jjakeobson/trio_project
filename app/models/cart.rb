@@ -14,7 +14,7 @@ class Cart < ActiveRecord::Base
 
   def total
     @total = 0
-    cart_items.each do |cart_item|
+    unique_cart_items.each do |cart_item|
       @total += cart_item.quantity * cart_item.product.price_in_cents
     end
     @total = @total / 100

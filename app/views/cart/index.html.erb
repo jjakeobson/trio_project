@@ -6,10 +6,11 @@
     <%= link_to "Go To Products", products_path %>
   </p>
 <% end %>
-
+<hr>
+<div class="cart1">
 <ul>
   <% @cart.unique_cart_items.each do |cart_item| %>
-      <li>
+      <li class="cart_item">
         <b>Product:</b> <%= link_to cart_item.product.name, cart_item.product %>
 
         <p>
@@ -18,10 +19,13 @@
         <p>
           <b>Quantity:</b> <%= cart_item.quantity %>
         </p>
+        <hr>
       </li>
   <% end %>
   <p>
-    <b>  Total: <%= number_to_currency(@cart.total, unit: '$') %></b>
+    <b id="total">  Total: <%= number_to_currency(@cart.total, unit: '$') %></b>
+    <button class="btn btn-success btn-success"><%= link_to "Pay Now", charges_path %></button>
   </p>
 </ul>
-<strong><%= link_to "Pay Now", charges_path %></strong>
+</div>
+<!-- <button class="btn btn-success btn-success"><%= link_to "Pay Now", charges_path %></button> -->

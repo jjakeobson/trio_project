@@ -4,7 +4,7 @@
   <%= link_to 'Back', products_path %><br>
 
                 <div class="thumbnail">
-                    <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+                    <%= image_tag(@product.image_url, class: "img-responsive") %>
                     <div class="caption-full">
                         <h4 class="pull-right"><%= @product.formatted_price %></h4>
                         <h4><a href="#"><%= @product.name %></a>
